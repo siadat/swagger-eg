@@ -1,0 +1,38 @@
+swagger: '2.0'
+info:
+  version: "0.0.0"
+  title: Testman
+schemes:
+  - http
+host: localhost
+basePath: /api/v1
+produces:
+  - application/json
+consumes:
+  - application/json
+paths:
+  /keys/{key}:
+    get:
+      parameters:
+        - name: key
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful response
+        404:
+          description: Not found.
+    post:
+      parameters:
+        - name: key
+          in: path
+          required: true
+          type: string
+        - name: value
+          in: query
+          required: true
+          type: string
+      responses:
+        200:
+          description: Successful response
